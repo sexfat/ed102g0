@@ -12,8 +12,8 @@ var reload = browserSync.reload;
 //路徑
 var web = {
   sass: [
-      'sass/*.scss',
-      'sass/**/*.scss'
+      './sass/*.scss',
+      '.sass/**/*.scss'
 
   ],
   html: [
@@ -110,22 +110,14 @@ gulp.task('watch', function () {
 
 // html 樣板
 gulp.task('fileinclude', function () {
-  gulp.src(['index.html'])
+  gulp.src(['*.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
     }))
+    
     .pipe(gulp.dest('./dest'));
 });
-
-
-//  檔案搬家
-// gulp.task('concat', function () {
-//   return gulp.src('css/*.css')
-//       .pipe(concat('all.css'))
-//       .pipe(gulp.dest('dest/css/'));
-// });
-
 
 
 gulp.task('img_mini', function () {
@@ -135,7 +127,7 @@ gulp.task('img_mini', function () {
 });
 
 
-gulp.task('default', ['sass'], function () {
+gulp.task('default', function () {
 
   browserSync.init({
       server: {
@@ -147,5 +139,5 @@ gulp.task('default', ['sass'], function () {
   gulp.watch(web.sass, ['sass']).on('change', reload);
   gulp.watch(web.js).on('change', reload);
   gulp.watch(web.html, ['fileinclude']).on('change', reload);
-  // gulp.watch("images/*").on('change', reload);
+  
 });
