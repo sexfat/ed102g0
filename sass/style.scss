@@ -1,0 +1,23 @@
+//base
+@import "./base/reset";
+@import "./base/var";
+@import "./base/color";
+@import "./base/font";
+
+//mixin 
+
+@import "./mixins/mixin";
+
+// layout
+@import "./layout/header";
+@import "./layout/login";
+@import "./layout/footer";
+
+
+//page
+
+@import "./page/main";
+@import "./page/about";
+
+
+
