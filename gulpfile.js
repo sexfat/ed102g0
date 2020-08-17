@@ -25,11 +25,18 @@ gulp.task('css',['copy'] ,function () { //先執行 ['copy'] 這個function
 
 gulp.task('sass', function () {
     return gulp.src('./dev/sass/*.scss') //來源
-      .pipe(sass().on('error', sass.logError)) //sass轉譯
+      .pipe(sass().on('error', sass.logError))//轉譯sass
+      .pipe(cleanCSS({
+        compatibility: 'ie8'
+    }))// 壓縮css
       .pipe(gulp.dest('./dist/css')); //目的地
   });
 
 
+//監看變動
+gulp.task('watch' ,function(){
+   gulp.watch('./dev/sass/*.scss' ,['sass'])
+})
 
 
 //同步
