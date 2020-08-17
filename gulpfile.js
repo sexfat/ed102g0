@@ -13,7 +13,7 @@ gulp.task('copy', function () {
 })
 
 //異步
-gulp.task('css',['copy'] ,function () {
+gulp.task('css',['copy'] ,function () { //先執行 ['copy'] 這個function
     return gulp.src('dev/css/reset.css')
     .pipe(cleanCSS({
         compatibility: 'ie8'
