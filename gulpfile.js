@@ -7,6 +7,7 @@ const browserSync = require('browser-sync');
 const imagemin = require('gulp-imagemin');
 var sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
+const clean = require('gulp-clean');
 const reload = browserSync.reload;
 
 
@@ -86,6 +87,13 @@ gulp.task('babels', () =>
         }))
         .pipe(gulp.dest('dist/js'))
 );
+
+
+//清除舊檔案
+gulp.task('clear', function () {
+    return gulp.src('dist', {read: false ,allowEmpty: true})
+        .pipe(clean());
+});
 
 
 
