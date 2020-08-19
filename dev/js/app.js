@@ -1,0 +1,1 @@
+const funcA =  y => y + 2

@@ -6,6 +6,7 @@ const fileinclude = require('gulp-file-include');
 const browserSync = require('browser-sync');
 const imagemin = require('gulp-imagemin');
 var sourcemaps = require('gulp-sourcemaps');
+const babel = require('gulp-babel');
 const reload = browserSync.reload;
 
 
@@ -77,6 +78,18 @@ gulp.task('img', function () {
 })
 
 
+//es6 -> es5
+gulp.task('babels', () =>
+    gulp.src('dev/js/app.js')
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(gulp.dest('dist/js'))
+);
+
+
+
+
 
 //瀏覽器同步
 gulp.task('default', function () {
@@ -88,6 +101,7 @@ gulp.task('default', function () {
     });
     gulp.watch('./dev/sass/*.scss', ['sass', 'concat']).on('change', reload);
     gulp.watch(['dev/*.html', 'dev/**/*.html'], ['fileinclude']).on('change', reload);
+    gulp.watch('dev/js/*.js' , ['babels']).on('change', reload);
 });
 
 
