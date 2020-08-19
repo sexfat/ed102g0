@@ -58,7 +58,8 @@ gulp.task('fileinclude', function () {
 
 //監看變動
 gulp.task('watch', function () {
-    gulp.watch('./dev/sass/*.scss', ['sass'])
+    gulp.watch('./dev/sass/*.scss', ['sass' , 'concat']);
+    gulp.watch(['dev/*.html' , 'dev/**/*.html'] , ['fileinclude']);
 })
 
 
