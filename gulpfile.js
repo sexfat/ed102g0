@@ -5,7 +5,8 @@ const {
     parallel,
     watch
 } = require('gulp');
-const GulpClient = require('gulp');
+
+
 
 
 function logs(cb){
@@ -33,7 +34,7 @@ exports.sync = parallel(missionA , missionB);
 
 
  function copy(cb){
-  return src('dev/index.html').pipe(dest('dist/'));
+   return src(['dev/*.html' ,'!dev/a*.html']).pipe(dest('dist/'));
  cb();
 }
 //輸出
