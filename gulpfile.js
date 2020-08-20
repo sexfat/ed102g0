@@ -28,7 +28,6 @@ function missionB(cb) {
 }
 // 異步
 exports.async = series(missionA , missionB);
-
 //同步
 exports.sync = parallel(missionA , missionB);
 
@@ -37,7 +36,7 @@ exports.sync = parallel(missionA , missionB);
   return src('dev/index.html').pipe(dest('dist/'));
  cb();
 }
-
+//輸出
 exports.move = copy
 
 
