@@ -114,4 +114,4 @@ gulp.task('default', function () {
 
 
 //同步
-gulp.task('all', ['copy', 'css']); //同時執行 ['copy' ,'css'] 這兩個function
+gulp.task('production', ['sass', 'concat' , 'fileinclude' ,'babels']); //同時執行 ['copy' ,'css'] 這兩個function
