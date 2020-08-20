@@ -1,5 +1,6 @@
-import  "./style.css";
+// import  "./style.css";
 // import $ from "jquery";
+import "./main.scss";
 
 // $('.title').css('color' , 'red');
 
