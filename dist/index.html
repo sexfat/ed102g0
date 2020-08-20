@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @@loop('app/style.html',[
+        {"styles" : "./css/style.css"},
+     ])
+    @@include('app/meta.html', {
+       "title" : "首頁" 
+    })
+</head>
+<body>
+    @@include('app/nav.html')
+    <div class="wrapper">
+        <div class="content">
+            <h2>首頁標題</h2>
+            <div class="sidebar">側邊欄</div>
+        </div>
+    </div>
+    @@include('app/footer.html')
+</body>
+</html>
