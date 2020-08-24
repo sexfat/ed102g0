@@ -8,7 +8,8 @@ const {
 
 module.exports = {
     entry: {
-       app : './app.js'
+       app : './app.js',
+       aboutus : './app2.js'
     },               // 入口文件
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -42,7 +43,17 @@ module.exports = {
           template : 'index.html',
           //目的地
           filename : 'index.html',
-          title : '內頁'
+          title : '首頁',
+          chunks : ['app']
+
+        }),
+        new HtmlWebpackPlugin({
+          //來源
+          template : 'aboutus.html',
+          //目的地
+          filename : 'aboutus.html',
+          title : '內頁',
+          chunks : ['aboutus']
         })
     ],             // 對應的插件
     devServer: {
