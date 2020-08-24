@@ -36,7 +36,8 @@ module.exports = {
           //來源
           template : 'index.html',
           //目的地
-          filename : 'index.html'
+          filename : 'index.html',
+          title : '首頁'
         })
     ],             // 對應的插件
     devServer: {
