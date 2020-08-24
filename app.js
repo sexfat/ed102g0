@@ -1,8 +1,8 @@
 // import  "./style.css";
-// import $ from "jquery";
+import $ from "jquery";
 import "./main.scss";
 
-// $('.title').css('color' , 'red');
+$('.title').css('color' , '#eee');
 
 
 console.log('webpack4 start');

@@ -39,6 +39,13 @@ module.exports = {
           filename : 'index.html'
         })
     ],             // 對應的插件
-    //devServer: {},           // 服務器配置
+    devServer: {
+      contentBase: './dist',
+      host: 'localhost',
+      port: 3000,
+      // 指定首頁檔案
+      index: 'index.html',
+      open: true
+    },          // 服務器配置
     mode: 'development'       // 開發模式配置 development
 }
