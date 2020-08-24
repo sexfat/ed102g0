@@ -38,6 +38,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "./[name].css"
         }),
+        //首頁配置
         new HtmlWebpackPlugin({
           //來源
           template : 'index.html',
@@ -47,6 +48,7 @@ module.exports = {
           chunks : ['app']
 
         }),
+        //內頁配置
         new HtmlWebpackPlugin({
           //來源
           template : 'aboutus.html',
