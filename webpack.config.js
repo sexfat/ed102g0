@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -30,6 +31,12 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "./[name].css"
+        }),
+        new HtmlWebpackPlugin({
+          //來源
+          template : 'index.html',
+          //目的地
+          filename : 'index.html'
         })
     ],             // 對應的插件
     //devServer: {},           // 服務器配置
